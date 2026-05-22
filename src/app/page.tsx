@@ -10,6 +10,7 @@ import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
 import About from "@/components/About";
+import Insights from "@/components/Insights";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -165,6 +166,9 @@ export default function Home() {
 
       {/* Case Studies Section */}
       <CaseStudies />
+
+      {/* Insights Section */}
+      <Insights />
 
       {/* About Section */}
       <About />
