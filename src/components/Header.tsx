@@ -59,7 +59,7 @@ export default function Header() {
           >
             <div className="relative w-[24px] h-[36px] flex items-center justify-center">
               <Image
-                src="/images/logo-flat.svg"
+                src={`${process.env.NODE_ENV === "production" ? "/Red_Bridge_" : ""}/images/logo-flat.svg`}
                 alt="Red Bridge Logo"
                 fill
                 className="object-contain"
