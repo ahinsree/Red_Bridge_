@@ -86,3 +86,17 @@ npm run lint
 ```
 
 When changes are pushed to the `main` branch, the GitHub Actions deployment pipeline automatically compiles and deploys the production bundle to GitHub Pages.
+
+---
+
+## 💎 Recent Core Updates
+
+Here are the latest portal enhancements:
+
+1. **Header Navigation Scroll Alignment**: Reordered header menu links (`Solutions` ➔ `Industries` ➔ `What We Do` ➔ `Case Studies` ➔ `Insights` ➔ `About`) to match the exact visual scroll order of the page.
+2. **Insights Ledger Section**: Created a 2x2 grid of thought leadership research papers with article summary cards, read-time indices, and slide-in hover-effects.
+3. **Externalized Data Ingestion**: Decoupled content rendering in the Insights component from raw data by moving the articles database to a dedicated TS configuration module.
+4. **Insights Graphic Integrations**: Added support for high-end, responsive illustrations for each article, with automatic hover zoom animations.
+5. **AI Chatbot Response Expansion**: Upgraded the digital assistant with shortcut panels and rule-based query mappings for client pricing model inquiries, vertical coverage, case studies, and careers.
+6. **Editorial About Section**: Implemented the corporate narrative with customized glassmorphism cards explaining the radical integration, scientific precision, and delivery sprint standards.
+
