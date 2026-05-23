@@ -33,12 +33,15 @@ To add or update an article, open that file and add a new entry to the `insights
 {
   id: "article-slug-url-safe",                 // Unique string id (e.g. "my-article")
   category: "Strategic Governance",            // Category tag displayed above title
-  readTime: "6 Min Read",                      // Read time indicator
-  date: "Oct 24, 2025",                        // Date of publication
+  daysAgo: 2,                                  // Number of days ago published (used for relative date generation)
   title: "The Slide Deck Fallacy...",          // Main headline
   summary: "Traditional advisory firms...",    // Brief description (2-3 sentences)
   author: "Red Bridge Research",               // Author signature
   imageUrl: "/images/insight_strategy.png",    // Optional: relative path to public graphic asset
+  content: [                                   // Paragraph content text array for detail drawer
+    "Traditional advisory firms deliver...",
+    "..."
+  ]
 }
 ```
 
@@ -99,4 +102,11 @@ Here are the latest portal enhancements:
 4. **Insights Graphic Integrations**: Added support for high-end, responsive illustrations for each article, with automatic hover zoom animations.
 5. **AI Chatbot Response Expansion**: Upgraded the digital assistant with shortcut panels and rule-based query mappings for client pricing model inquiries, vertical coverage, case studies, and careers.
 6. **Editorial About Section**: Implemented the corporate narrative with customized glassmorphism cards explaining the radical integration, scientific precision, and delivery sprint standards.
+7. **Relative Publication Dates**: Configured relative integer publication dates (`daysAgo` parameter) that automatically compute dates dynamically, ensuring content is always fresh.
+8. **Interactive Briefing Slide Drawers**: Built slide-in right drawer components inside **Insights**, **Industries**, and **Solutions (Capabilities)** sections using Framer Motion spring physics. Cards show dynamic briefings on click.
+9. **Dynamic Reading Time Indicators**: Replaced static read time fields with a calculator module running at an industry-standard 200 WPM to auto-compute read-times from paragraph arrays.
+10. **Live System Clock Widget**: Embedded a real-time running clock widget inside the portal header menu that matches local time formats (`HH:MM:SS AM/PM • DD MMM YYYY`).
+11. **Header Brand Leftward Alignment**: Shifted the brand logo slightly leftwards (`-ml-1 md:-ml-3`) to optically align it flush with the left border of the text blocks.
+12. **Employee Experience (EX) Re-alignment**: Aligned workforce velocity articles with Employee Experience corporate values, addressing internal environment friction.
+13. **Agentic Compliance Asset Refinement**: Updated the Agentic AI compliance framework illustration asset (`public/images/insight_agentic.png`) to improve visual fidelity.
 
