@@ -42,14 +42,14 @@ export const insightsData: InsightArticle[] = [
     id: "workforce-velocity",
     category: "Organizational Velocity",
     daysAgo: 14,
-    title: "Developer Experience & Workforce Churn: The EX/CX Correlation Ledger",
-    summary: "Correlating employee satisfaction and tooling speed directly to client satisfaction. Re-engineering internal developer pipelines can reduce engineering staff turnover by up to 62%.",
+    title: "Employee Experience & Workforce Churn: The EX/CX Correlation Ledger",
+    summary: "Correlating workforce satisfaction and internal system friction directly to client satisfaction. Re-engineering employee workflows and organizational incentives can reduce staff turnover by up to 62%.",
     author: "Experience Optimization Group",
     imageUrl: "/images/insight_devex.png",
     content: [
-      "It is an open secret in enterprise management that internal system friction degrades client-facing software quality. We establish a direct statistical correlation between developer experience (EX) metrics and customer experience (CX) indices.",
-      "When developer environments are slow, deployment pipelines are fragile, and feedback loops are long, developer velocity plummets. This environment breeds developer fatigue, leading to increased software bugs and workforce turnover. Our telemetry indicates that optimizing build times and CI/CD pipelines directly impacts external NPS scores.",
-      "By investing in robust local virtualization tools, automating compliance workflows, and reducing compile-to-deploy loop latencies, enterprise systems can reduce developer friction, lower engineering staff turnover by up to 62%, and deliver cleaner software to clients."
+      "It is an open secret in enterprise management that internal employee friction degrades client-facing service quality. We establish a direct statistical correlation between employee experience (EX) metrics and customer experience (CX) indices.",
+      "When internal tools are clunky, workplace workflows are fragmented, and feedback loops are long, employee engagement and operational velocity plummet. This friction breeds workforce fatigue, leading to increased errors, dropped balls, and high workforce turnover. Our telemetry indicates that optimizing internal workspace tools and employee journey touchpoints directly impacts external NPS scores.",
+      "By investing in modern digital workspace architectures, aligning workforce incentives, and automating repetitive compliance tasks, enterprises can reduce employee friction, lower workforce turnover by up to 62%, and deliver far superior, consistent client experiences."
     ],
   },
   {
