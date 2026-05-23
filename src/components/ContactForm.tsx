@@ -30,7 +30,23 @@ export default function ContactForm() {
     
     setLoading(true);
     
-    // Simulate API request to Resend/Supabase
+    // Print submission details to browser console for local verification
+    console.log("Captured Briefing Request Submission:", formState);
+    
+    // Store submission in client's localStorage
+    try {
+      const existingSubmissions = JSON.parse(localStorage.getItem("contact_submissions") || "[]");
+      const newSubmission = {
+        ...formState,
+        submittedAt: new Date().toISOString()
+      };
+      localStorage.setItem("contact_submissions", JSON.stringify([...existingSubmissions, newSubmission]));
+      console.log("Submission details successfully cached in localStorage under 'contact_submissions'.");
+    } catch (err) {
+      console.error("Failed to persist submission to localStorage:", err);
+    }
+    
+    // Simulate API request loading duration
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
