@@ -221,9 +221,9 @@ export default function Services() {
 
                 {/* Interactive 3D Canvas Box */}
                 <div className="relative w-full h-64 mb-8 overflow-hidden rounded border border-white/5 bg-black/45 flex items-center justify-center">
-                  <div className="w-full h-full relative">
+                  <ThreeDCard className="w-full h-full flex items-center justify-center bg-transparent">
                     <ThreeDWidget type={activeService.type} />
-                  </div>
+                  </ThreeDCard>
                 </div>
 
                 {/* Title and Icon */}
