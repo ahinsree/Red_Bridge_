@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, BookOpen, FileText, X } from "lucide-react";
@@ -24,8 +24,27 @@ const formatArticleDate = (daysAgo: number): string => {
   });
 };
 
+const getOptimizedInsightImage = (url: string, mobile: boolean) => {
+  if (!url) return "";
+  const dotIndex = url.lastIndexOf(".");
+  if (dotIndex === -1) return url;
+  const base = url.substring(0, dotIndex);
+  return `${base}-${mobile ? "mobile" : "desktop"}.webp`;
+};
+
 export default function Insights() {
   const [activeArticle, setActiveArticle] = useState<InsightArticle | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <section id="insights" className="py-24 px-6 md:px-8 max-w-7xl mx-auto border-t border-white/5 relative">
       {/* Background ambient lighting element */}
@@ -77,7 +96,7 @@ export default function Insights() {
                 {article.imageUrl && (
                   <div className="relative w-full h-48 mb-6 overflow-hidden rounded border border-white/5 bg-black/45">
                     <Image
-                      src={`${process.env.NODE_ENV === "production" ? "/Red_Bridge_" : ""}${article.imageUrl}`}
+                      src={`${process.env.NODE_ENV === "production" ? "/Red_Bridge_" : ""}${getOptimizedInsightImage(article.imageUrl, isMobile)}`}
                       alt={article.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -155,7 +174,7 @@ export default function Insights() {
                 {activeArticle.imageUrl && (
                   <div className="relative w-full h-64 mb-8 overflow-hidden rounded border border-white/5 bg-black/45">
                     <Image
-                      src={`${process.env.NODE_ENV === "production" ? "/Red_Bridge_" : ""}${activeArticle.imageUrl}`}
+                      src={`${process.env.NODE_ENV === "production" ? "/Red_Bridge_" : ""}${getOptimizedInsightImage(activeArticle.imageUrl, isMobile)}`}
                       alt={activeArticle.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 600px"
