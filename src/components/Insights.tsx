@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, BookOpen, FileText, X } from "lucide-react";
 import { insightsData, InsightArticle } from "@/data/insights";
@@ -75,11 +76,14 @@ export default function Insights() {
                 {/* Article Graphic Header */}
                 {article.imageUrl && (
                   <div className="relative w-full h-48 mb-6 overflow-hidden rounded border border-white/5 bg-black/45">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <Image
                       src={`${process.env.NODE_ENV === "production" ? "/Red_Bridge_" : ""}${article.imageUrl}`}
                       alt={article.title}
-                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-700 ease-out"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      loading="lazy"
+                      fetchPriority="low"
+                      className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-700 ease-out"
                     />
                   </div>
                 )}
@@ -150,11 +154,14 @@ export default function Insights() {
                 {/* Article Image */}
                 {activeArticle.imageUrl && (
                   <div className="relative w-full h-64 mb-8 overflow-hidden rounded border border-white/5 bg-black/45">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <Image
                       src={`${process.env.NODE_ENV === "production" ? "/Red_Bridge_" : ""}${activeArticle.imageUrl}`}
                       alt={activeArticle.title}
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 600px"
+                      loading="lazy"
+                      fetchPriority="low"
+                      className="object-cover"
                     />
                   </div>
                 )}

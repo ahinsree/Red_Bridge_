@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -156,16 +157,27 @@ export default function HeroSlider() {
             animate={{ opacity: 0.55 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8 }}
-            className="absolute inset-0 w-full h-full pointer-events-none"
+            className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden"
             style={{
-              backgroundImage: `url(${process.env.NODE_ENV === "production" ? "/Red_Bridge_" : ""}${activeSlide.visualUrl})`,
-              backgroundSize: "cover",
-              backgroundPosition: isMobile ? (activeSlide.bgPositionMobile || "70% center") : (activeSlide.bgPosition || "center"),
-              backgroundRepeat: "no-repeat",
               transform: `translate3d(${mousePos.x * -16}px, ${mousePos.y * -16}px, 0) scale(1.03)`,
               transition: "transform 0.6s cubic-bezier(0.1, 0.8, 0.2, 1)",
             }}
-          />
+          >
+            <Image
+              src={`${process.env.NODE_ENV === "production" ? "/Red_Bridge_" : ""}${activeSlide.visualUrl}`}
+              alt={activeSlide.tag}
+              fill
+              priority={activeSlide.id === 0}
+              fetchPriority={activeSlide.id === 0 ? "high" : "low"}
+              sizes="100vw"
+              className="object-cover"
+              style={{
+                objectPosition: isMobile 
+                  ? (activeSlide.bgPositionMobile || "70% center") 
+                  : (activeSlide.bgPosition || "center")
+              }}
+            />
+          </motion.div>
         </AnimatePresence>
 
         {/* Global Cinema Overlays */}
