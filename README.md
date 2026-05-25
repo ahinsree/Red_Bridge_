@@ -105,14 +105,13 @@ Here are the latest portal enhancements:
 7. **Relative Publication Dates**: Configured relative integer publication dates (`daysAgo` parameter) that automatically compute dates dynamically, ensuring content is always fresh.
 8. **Interactive Briefing Slide Drawers**: Built slide-in right drawer components inside **Insights**, **Industries**, and **Solutions (Capabilities)** sections using Framer Motion spring physics. Cards show dynamic briefings on click.
 9. **Dynamic Reading Time Indicators**: Replaced static read time fields with a calculator module running at an industry-standard 200 WPM to auto-compute read-times from paragraph arrays.
-10. **Live System Clock Widget**: Embedded a real-time running clock widget inside the portal header menu that matches local time formats (`HH:MM:SS AM/PM • DD MMM YYYY`).
-11. **Header Brand Leftward Alignment**: Shifted the brand logo slightly leftwards (`-ml-3 md:-ml-6`) to optically align it flush with the left border of the text blocks.
-12. **Employee Experience (EX) Re-alignment**: Aligned workforce velocity articles with Employee Experience corporate values, addressing internal environment friction.
-13. **Agentic Compliance Asset Refinement**: Updated the Agentic AI compliance framework illustration asset (`public/images/insight_agentic.png`) to improve visual fidelity.
-14. **Contact Form Submission Capturing**: Wired the advisory briefing request form to print lead details to the browser console and cache them in the client's `localStorage` under `contact_submissions` with timestamps for easy local verification.
-15. **Solutions Drawer 3D Centering & Parallax**: Centered the 3D WebGL canvas within the Solutions slide-drawer and enabled complete cursor hover-to-rotate tilt interactions inside the drawer by wrapping it in the dynamic 3D card layout context.
-16. **Live Google Sheets API Integration**: Connected the corporate briefing request form to your Google Sheets macro API endpoint, enabling secure asynchronous submissions directly to your live spreadsheet.
-17. **Secure API Routing & Environment Variables**: Secured sensitive spreadsheet Web App credentials by migrating them to a server-side environment file (`.env.local`) ignored by Git, and proxying submission calls through a dedicated, local Next.js server API endpoint (`/api/contact`).
+10. **Header Brand Leftward Alignment**: Shifted the brand logo slightly leftwards (`-ml-3 md:-ml-6`) to optically align it flush with the left border of the text blocks.
+11. **Employee Experience (EX) Re-alignment**: Aligned workforce velocity articles with Employee Experience corporate values, addressing internal environment friction.
+12. **Agentic Compliance Asset Refinement**: Updated the Agentic AI compliance framework illustration asset (`public/images/insight_agentic.png`) to improve visual fidelity.
+13. **Contact Form Submission Capturing**: Wired the advisory briefing request form to print lead details to the browser console and cache them in the client's `localStorage` under `contact_submissions` with timestamps for easy local verification.
+14. **Solutions Drawer 3D Centering & Parallax**: Centered the 3D WebGL canvas within the Solutions slide-drawer and enabled complete cursor hover-to-rotate tilt interactions inside the drawer by wrapping it in the dynamic 3D card layout context.
+15. **Live Google Sheets API Integration**: Connected the corporate briefing request form to your Google Sheets macro API endpoint, enabling secure asynchronous submissions directly to your live spreadsheet.
+16. **Secure API Routing & Environment Variables**: Secured sensitive spreadsheet Web App credentials by migrating them to a server-side environment file (`.env.local`) ignored by Git, and proxying submission calls through a dedicated, local Next.js server API endpoint (`/api/contact`).
 
 
 
